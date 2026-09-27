@@ -1,11 +1,5 @@
-/* =====================================================
-   Sito personale di Lorena Trotta
-   Foglio di stile scritto in SCSS (Sass), poi compilato
-   nel file style.css usato dalle pagine.
-   Stile: moderno, pulito, professionale.
-   ===================================================== */
 
-/* ---- Variabili colore (palette moderna) ---- */
+
 $ink:         #14171f;   // testo/titoli quasi neri
 $muted:       #616775;   // testo secondario
 $bg:          #ffffff;
@@ -426,9 +420,7 @@ img {
   }
 }
 
-/* ==========================================================
-   RESPONSIVE — il sito si adatta a tablet e smartphone
-   ========================================================== */
+
 @media (max-width: 768px) {
   .hero {
     padding: 60px 0;
