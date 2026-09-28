@@ -47,7 +47,6 @@
       ti risponderò il prima possibile.
     </p>
 
-    <!-- I campi con "required" sono obbligatori -->
     <form id="form-contatti" class="form-contatti">
       <div>
         <label for="nome">Nome e cognome</label>
@@ -88,21 +87,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- ============================================================
-       INVIO DEL FORM CON EmailJS (opzionale)
-       Per farlo funzionare davvero:
-       1) crea un account gratuito su https://www.emailjs.com
-       2) sostituisci le tre stringhe qui sotto con i tuoi codici
-       3) togli il commento alle righe con emailjs
-       Finché non lo configuri, il form mostra solo un messaggio
-       di conferma senza inviare davvero l'email.
-       ============================================================ -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
   <script>
-    // I tuoi codici EmailJS (da sostituire)
-    const EMAILJS_PUBLIC_KEY = "LA_TUA_PUBLIC_KEY";
-    const EMAILJS_SERVICE_ID = "IL_TUO_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "IL_TUO_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY = "9YrS3YSJS1ka9t3uu";
+    const EMAILJS_SERVICE_ID = "service_yrsg708";
+    const EMAILJS_TEMPLATE_ID = "9YrS3YSJS1ka9t3uu";
 
     const form = document.getElementById("form-contatti");
     const esito = document.getElementById("esito");
@@ -110,7 +99,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Se EmailJS è stato configurato e caricato, invia l'email:
+     
       if (window.emailjs && EMAILJS_PUBLIC_KEY !== "LA_TUA_PUBLIC_KEY") {
         emailjs.init(EMAILJS_PUBLIC_KEY);
         emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
@@ -123,7 +112,6 @@
             esito.textContent = "Ops, qualcosa è andato storto. Riprova più tardi.";
           });
       } else {
-        // Modalità dimostrativa (senza invio reale)
         esito.style.color = "green";
         esito.textContent = "Grazie " + document.getElementById("nome").value + "! Il tuo messaggio è stato ricevuto.";
         form.reset();
